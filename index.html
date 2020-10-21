@@ -50,13 +50,13 @@
           </ul>
           <ul class="navbar-nav ml-auto">
             <li>
-                <button type="button" class="btn btn-outline-info">Increase Font Size</button> 
+                <button type="button" class="btn btn-outline-info" id="button1">Increase Font Size</button> 
             </li>
             <li>
-                <button type="button" class="btn btn-outline-info">Change Font Type</button> 
+                <button type="button" class="btn btn-outline-info" id="button2">Change Font Type</button> 
             </li>
             <li>
-                <button type="button" class="btn btn-outline-info">Reset Font Size</button> 
+                <button type="button" class="btn btn-outline-info" id="button3">Reset Font Size</button> 
             </li>
           </ul>
         </div>
@@ -64,7 +64,7 @@
      
       <p>
         <button class="btn btn-primary form-control" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-          Conatct Us!
+          Contact Us!
         </button>
       </p>
       <div class="collapse container" id="collapseExample">
@@ -98,7 +98,7 @@
         <section class="s1">
             <div class="body-wrapper">
                 <div class="left-grid">
-                    <img src="images/beeline.png">
+                    <img src="images/beeline.png" id="leftimg">
 
                 </div>
 
@@ -141,4 +141,29 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<script>
+  $(document).ready(function(){
+  $(".thumbnail").click(function(){
+    $(".thumbnail").hide();
+  });
+  $("#leftimg").click(function() {
+    $(this).height(200);
+    $(this).width(200);
+    $(this).off(); //so that it only resizes once...
+  });
+  $("#button1").click(function(){
+    jQuery("body *").css('font-size','+=1');
+  });
+  $("#button2").click(function(){
+    jQuery("body *").css('font-family','Arial');  //it's not changing to comic sans, maybe its part of the downloaded fonts, check marks disappear with change of font
+  });
+  $("#button3").click(function(){
+    jQuery("body *").css('font-size','16px');
+    jQuery("h1").css('font-size', '40px');
+  });
+});
+</script>
+
+
+
 </html>
